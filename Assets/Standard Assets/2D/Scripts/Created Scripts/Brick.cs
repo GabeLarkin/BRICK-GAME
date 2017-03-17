@@ -4,6 +4,7 @@ using System.Collections;
 public class Brick : MonoBehaviour
 {
    public int health = 2;
+   public int points = 1;
     // Use this for initialization
     void Start()
     {

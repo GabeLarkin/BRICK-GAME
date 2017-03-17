@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+
 public class Ball : MonoBehaviour {
 
    public Vector2 startingVelocity = new Vector2(15, -20);
@@ -8,9 +9,10 @@ public class Ball : MonoBehaviour {
    public GameObject gameOverSign;
    public GameObject youWinSign;
    public Text livesValue;
-   public Text pointsValue;  
-    int lives = 3;
-    int points = 0;
+   public Text pointsValue;
+      
+   int lives = 3;
+   int points = 0;
 
     void Start () {
         startingPosition = transform.position;
@@ -53,8 +55,9 @@ public class Ball : MonoBehaviour {
 
    public void YouBrokeABrick()
     {
-        points += 1;
+        points += lives;
         pointsValue.text = points.ToString();
+
         var bricksleft = FindObjectsOfType<Brick>().Length;
         if(bricksleft == 0)
         {
